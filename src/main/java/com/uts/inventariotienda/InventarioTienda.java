@@ -1,16 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.uts.inventariotienda;
 
-/**
- *
- * @author xpher
- */
-public class InventarioTienda {
+import static com.uts.inventariotienda.hibernate.HibernateUtil.getSessionFactory;
+import static com.uts.inventariotienda.hibernate.HibernateUtil.shutDown;
+import org.hibernate.Session;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+public class InventarioTienda {
+    public static void main(String[] args){
+        System.out.println("Probando Hibernate");
+        try(Session session = getSessionFactory().openSession()){
+            System.out.println("Éxito");
+        } catch (Exception e){
+            System.err.println("Error" + e.getMessage());
+        } finally{
+            shutDown();
+        }
     }
 }
