@@ -17,7 +17,7 @@ public class LoginDAOImpl implements ILoginDAO{
         try {
             Query<Usuario> query = session.createQuery("FROM Usuario WHERE emailUsuario = :email", Usuario.class);
             query.setParameter("email", loginDTO.getEmail());
-            usuario = query.uniqueResult(); // Obtiene el usuario que coincide con el email
+            usuario = query.uniqueResult();
 
             if (usuario != null && usuario.getPasswordUsuario().equals(loginDTO.getPassword())) {
                 return usuario;
