@@ -12,5 +12,13 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <mapping class="com.uts.inventariotienda.model.Usuario"/>
+        <mapping class="com.uts.inventariotienda.model.Proveedor"/>
+        <mapping class="com.uts.inventariotienda.model.Categoria"/>
+        <mapping class="com.uts.inventariotienda.model.Desarrollador"/>
+        <mapping class="com.uts.inventariotienda.model.Juego"/>
+        <mapping class="com.uts.inventariotienda.model.EntradaInventario"/>
+        <mapping class="com.uts.inventariotienda.model.SalidaInventario"/>
     </session-factory>
 </hibernate-configuration>
